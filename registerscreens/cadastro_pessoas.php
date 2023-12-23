@@ -10,26 +10,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="../index.php">TUSPELICULASFAVORITAS</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="../index.php">Home <span class="sr-only">(página atual)</span></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <?php 
+
+        include '../partials/header.php';
+
+    ?>
 
 
 
     <div class="conteudo p-3">
         
         <div class="container">
+            <?php 
+                if (isset($_GET['sucess'])) {
+                    $sucess = urldecode($_GET['sucess']);
+                    echo '<div class="alert alert-success" role="alert">' . $sucess . '</div>';
+                }
+            ?>
             <div class="row">
                 <h4 c>Cadastro de Pessoas</h4>
             </div>
@@ -41,37 +39,55 @@
 
                         <div class="form-group">
                             <label for="nome_artistico">Nome artístico</label>
-                            <input type="text" class="form-control" id="nome_artistico" name="nome_artistico">
+                            <input type="text" class="form-control" id="nome_artistico" name="nome_artistico" required>
                         </div>
                         <div class="form-group">
                             <label for="nome_verdadeiro">Nome verdadeiro</label>
-                            <input type="text" class="form-control" id="nome_verdadeiro" name="nome_verdadeiro">
+                            <input type="text" class="form-control" id="nome_verdadeiro" name="nome_verdadeiro" required>
                         </div>
                         <div class="form-group">
                             <label for="sexo">Sexo</label>
-                            <input type="text" class="form-control" id="sexo" name="sexo">
+                            <input type="text" class="form-control" id="sexo" name="sexo" required>
                         </div>
                         <div class="form-group">
                             <label for="ano_nascimento">Ano de nascimento</label>
-                            <input type="date" class="form-control" id="ano_nascimento" name="ano_nascimento">
+                            <input type="date" class="form-control" id="ano_nascimento" name="ano_nascimento" required>
                         </div>
                         <div class="form-group">
                             <label for="site">Site</label>
-                            <input type="text" class="form-control" id="site" name="site">
+                            <input type="text" class="form-control" id="site" name="site" required>
                         </div>
                         <div class="form-group">
                             <label for="ano_inicio">Ano de início</label>
-                            <input type="date" class="form-control" id="ano_inicio" name="ano_inicio">
+                            <input type="date" class="form-control" id="ano_inicio" name="ano_inicio" required>
                         </div>
                         <div class="form-group">
                             <label for="anos_trabalhados">Anos trabalhados</label>
-                            <input type="text" class="form-control" id="anos_trabalhados" name="anos_trabalhados">
+                            <input type="text" class="form-control" id="anos_trabalhados" name="anos_trabalhados" required>
                         </div>
                         <div class="form-group">
                             <label for="status">Status</label>
-                            <input type="text" class="form-control" id="status" name="status">
+                            <input type="text" class="form-control" id="status" name="status" required>
                         </div>
 
+                        Funcão <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="ator" value="ator" name="funcoes[]">
+                            <label class="form-check-label" for="ator">Ator</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="diretor" value="diretor" name="funcoes[]">
+                            <label class="form-check-label" for="diretor">Diretor</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="outro" value="outro" name="funcoes[]">
+                            <label class="form-check-label" for="outro">Outro</label>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" id="hidden" name="hidden">
+                        </div>
+                        
                         <button type="submit" class="btn btn-primary">Enviar</button>
 
                     </form>

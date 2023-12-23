@@ -21,7 +21,27 @@
 
         $stmt->execute();
 
-        echo 'SUCESSO';
+        if (isset($_POST["funcoes"]) && is_array($_POST["funcoes"]) && count($_POST["funcoes"]) > 0) {
+            // Recuperar os interesses selecionados
+            $funcoes = $_POST["funcoes"];
+
+            foreach ($funcoes as $funcao) {
+                $query = "INSERT INTO $funcao 
+                    VALUES (:nome_artistico)";
+
+                    $stmt = $conexao->prepare($query);
+
+                    $stmt->bindValue(':nome_artistico', $_POST['nome_artistico']);
+                    
+                    $stmt->execute();
+
+            }
+        }
+    
+
+        $sucess = urlencode("Pessoa adicionada com sucesso, você já pode adicionar outra");
+        header("Location: ../registerscreens/cadastro_pessoas.php?sucess={$sucess}");
+        exit();
     }catch(PDOException $e){
         echo 'ERRO';
     }
