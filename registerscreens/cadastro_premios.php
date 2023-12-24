@@ -52,13 +52,13 @@ try {
                 }
             ?>
             <div class="row">
-                <h4 c>Cadastro de Prêmios </h4>
+                <h4>Cadastro de Prêmios </h4>
             </div>
             <div class="row">
                 <div class="col"></div>
                 <div class="col-6">
 
-                    <form method="post" action="../services/eventos_services.php">
+                    <form method="post" action="../services/premios_services.php">
 
                         <div class="form-group">
                             <label for="tipo">tipo</label>
@@ -78,7 +78,7 @@ try {
                         </div>
                         <div class="form-group">
                             <label for="nome">Nome</label>
-                            <input type="number" class="form-control" id="nome" name="nome" required>
+                            <input type="text" class="form-control" id="nome" name="nome" required>
                         </div>
                         
                         
@@ -91,7 +91,7 @@ try {
         </div>
         
     </div>
-    <div style="margin-top: 90px;">
+    <div style="margin-top: 180px;">
     <?php 
         
         include '../partials/footer.php';

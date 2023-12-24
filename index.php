@@ -26,14 +26,14 @@
                         Cadastrar
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item " href="registerscreens/cadastro_pessoas.php">Pessoas</a>
+                        <a class="dropdown-item " href="registerscreens/cadastro_filmes.php">Filmes</a>
+                        <a class="dropdown-item " href="registerscreens/cadastro_pessoa_filme.php">Pessoas em filmes</a>
                         <a class="dropdown-item " href="registerscreens/cadastro_eventos.php">Eventos</a>
                         <a class="dropdown-item " href="registerscreens/cadastro_edicoes.php">Edição</a>
-                        <a class="dropdown-item " href="registerscreens/cadastro_filmes.php">Filmes</a>
-                        <a class="dropdown-item " href="registerscreens/cadastro_nominacoes.php">Nominações</a>
-                        <a class="dropdown-item " href="registerscreens/cadastro_pessoas.php">Pessoas</a>
-                        <a class="dropdown-item " href="registerscreens/cadastro_premiacoes.php">Premiações</a>
                         <a class="dropdown-item " href="registerscreens/cadastro_premios.php">Prêmios</a>
-                        <a class="dropdown-item " href="registerscreens/cadastro_pessoa_filme.php">Pessoas em filmes</a>
+                        <a class="dropdown-item " href="registerscreens/cadastro_nominacoes.php">Nominações</a>
+                        <a class="dropdown-item " href="registerscreens/cadastro_premiacoes.php">Premiações</a>
                     </div>
                 </li>
                 <li class="nav-item">
