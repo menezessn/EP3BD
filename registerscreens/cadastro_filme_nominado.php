@@ -9,11 +9,8 @@ try {
     $sql = "SELECT titulo_original, ano_producao FROM Filme"; 
     $result = $conn->query($sql);
 
-    $sql2 = "SELECT nome_artistico FROM Pessoa"; 
+    $sql2 = "SELECT tipo, FK_EDICAO_ano, FK_EVENTO_nome FROM Premio"; 
     $result2 = $conn->query($sql2);
-
-    $sql3 = "SELECT tipo, FK_EDICAO_ano, FK_EVENTO_nome FROM Premio"; 
-    $result3 = $conn->query($sql3);
 
     
 
@@ -58,13 +55,13 @@ try {
                 }
             ?>
             <div class="row">
-                <h4>Cadastro de Nominações/Premiações de Pessoas</h4>
+                <h4>Cadastro de Nominações/Premiações de filmes</h4>
             </div>
             <div class="row">
                 <div class="col"></div>
                 <div class="col-6">
 
-                    <form method="post" action="../services/nominacoes_services.php">
+                    <form method="post" action="../services/filme_nominacoes_services.php">
 
                         
                         <div class="form-group mb-3">
@@ -79,25 +76,14 @@ try {
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group mb-3">
-                            <label  for="pessoa">Pessoa</label>
-                            <select class="form-control" id="pessoa" name="pessoa">
-                                <option selected>Escolher...</option>
-                                <?php
-                                    // Iterar sobre os resultados e criar opções
-                                    foreach ($result2 as $row) {
-                                        echo "<option value='{$row['nome_artistico']}'>{$row['nome_artistico']}</option>";
-                                    }
-                                ?>
-                            </select>
-                        </div>
+                        
                         <div class="form-group mb-3">
                             <label  for="premio">Premio</label>
                             <select class="form-control" id="premio" name="premio">
                                 <option selected>Escolher...</option>
                                 <?php
                                     // Iterar sobre os resultados e criar opções
-                                    foreach ($result3 as $row) {
+                                    foreach ($result2 as $row) {
                                         echo "<option value='{$row['tipo']}-{$row['FK_EDICAO_ano']}-{$row['FK_EVENTO_nome']}'>{$row['tipo']}-{$row['FK_EDICAO_ano']}-{$row['FK_EVENTO_nome']}</option>";
                                     }
                                 ?>
@@ -122,7 +108,7 @@ try {
         </div>
         
     </div>
-    <div style="margin-top: 90px;">
+    <div style="margin-top: 180px;">
     <?php 
         
         include '../partials/footer.php';

@@ -32,8 +32,8 @@
                         <a class="dropdown-item " href="registerscreens/cadastro_eventos.php">Eventos</a>
                         <a class="dropdown-item " href="registerscreens/cadastro_edicoes.php">Edição</a>
                         <a class="dropdown-item " href="registerscreens/cadastro_premios.php">Prêmios</a>
-                        <a class="dropdown-item " href="registerscreens/cadastro_nominacoes.php">Nominações</a>
-                        <a class="dropdown-item " href="registerscreens/cadastro_premiacoes.php">Premiações</a>
+                        <a class="dropdown-item " href="registerscreens/cadastro_nominacoes.php">Nominações de pessoas</a>
+                        <a class="dropdown-item " href="registerscreens/cadastro_filme_nominado.php">Nominações de filmes</a>
                     </div>
                 </li>
                 <li class="nav-item">
