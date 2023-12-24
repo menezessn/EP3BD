@@ -6,7 +6,7 @@ try {
     $conn = $conn->conectar();
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT ano, FK_EVENTO_nome FROM Edicao"; 
+    $sql = "SELECT nome FROM Evento"; 
     $result = $conn->query($sql);
 
     
@@ -52,33 +52,41 @@ try {
                 }
             ?>
             <div class="row">
-                <h4 c>Cadastro de Prêmios </h4>
+                <h4 c>Cadastro de Edição </h4>
             </div>
             <div class="row">
                 <div class="col"></div>
                 <div class="col-6">
 
-                    <form method="post" action="../services/eventos_services.php">
+                    <form method="post" action="../services/edicao_services.php">
 
-                        <div class="form-group">
-                            <label for="tipo">tipo</label>
-                            <input type="text" class="form-control" id="tipo" name="tipo" required>
-                        </div>
                         <div class="form-group mb-3">
-                            <label  for="edicao">Edicao</label>
-                            <select class="form-control" id="edicao" name="edicao">
+                            <label  for="evento_nome">Nome do evento</label>
+                            <select class="form-control" id="evento_nome" name="evento_nome">
                                 <option selected>Escolher...</option>
                                 <?php
                                     // Iterar sobre os resultados e criar opções
                                     foreach ($result as $row) {
-                                        echo "<option value='{$row['FK_EVENTO_nome']}-{$row['ano']}'>{$row['FK_EVENTO_nome']}-{$row['ano']}</option>";
+                                        echo "<option value='{$row['nome']}'>{$row['nome']}</option>";
                                     }
                                 ?>
                             </select>
                         </div>
+
                         <div class="form-group">
-                            <label for="nome">Nome</label>
-                            <input type="number" class="form-control" id="nome" name="nome" required>
+                            <label for="ano">Ano</label>
+                            <input type="text" class="form-control" id="ano" name="ano" required>
+                        </div>
+                        
+
+                        <div class="form-group">
+                            <label for="data">Data</label>
+                            <input type="date" class="form-control" id="data" name="data" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="localizacao">Localização</label>
+                            <input type="text" class="form-control" id="localizacao" name="localizacao" required>
                         </div>
                         
                         

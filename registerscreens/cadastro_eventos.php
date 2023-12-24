@@ -1,27 +1,3 @@
-<?php
-require "../services/conexao.php";
-
-try {
-    $conn = new Conexao();
-    $conn = $conn->conectar();
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $sql = "SELECT nome_artistico FROM Pessoa"; 
-    $result = $conn->query($sql);
-
-    $sql2 = "SELECT titulo_original, ano_producao FROM Filme";
-    $result2 = $conn->query($sql2);
-
-} catch (PDOException $e) {
-    die("Erro na conexão com o banco de dados: " . $e->getMessage());
-}
-
-
-?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

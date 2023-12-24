@@ -27,6 +27,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item " href="registerscreens/cadastro_eventos.php">Eventos</a>
+                        <a class="dropdown-item " href="registerscreens/cadastro_edicoes.php">Edição</a>
                         <a class="dropdown-item " href="registerscreens/cadastro_filmes.php">Filmes</a>
                         <a class="dropdown-item " href="registerscreens/cadastro_nominacoes.php">Nominações</a>
                         <a class="dropdown-item " href="registerscreens/cadastro_pessoas.php">Pessoas</a>
