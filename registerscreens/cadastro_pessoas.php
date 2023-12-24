@@ -46,8 +46,13 @@
                             <input type="text" class="form-control" id="nome_verdadeiro" name="nome_verdadeiro" required>
                         </div>
                         <div class="form-group">
-                            <label for="sexo">Sexo</label>
-                            <input type="text" class="form-control" id="sexo" name="sexo" required>
+                            <label  for="ganhou">Sexo</label>
+                            <select class="form-control" id="sexo" name="sexo" required>
+                                <option selected>Escolher...</option>
+                                <option value='M'>Masculino</option>
+                                <option value='F'>Feminino</option>
+                                <option value='O'>Outro</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="ano_nascimento">Ano de nascimento</label>
@@ -66,8 +71,12 @@
                             <input type="text" class="form-control" id="anos_trabalhados" name="anos_trabalhados" required>
                         </div>
                         <div class="form-group">
-                            <label for="status">Status</label>
-                            <input type="text" class="form-control" id="status" name="status" required>
+                            <label  for="ganhou">Status</label>
+                            <select class="form-control" id="status" name="status" required>
+                                <option selected>Escolher...</option>
+                                <option value='Ativo'>Ativo</option>
+                                <option value='Aposentado'>Aposentado</option>
+                            </select>
                         </div>
 
                         Funcão <br>
