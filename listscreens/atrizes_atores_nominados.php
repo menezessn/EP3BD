@@ -6,13 +6,11 @@ try {
     $conn = $conn->conectar();
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT titulo_original, ano_producao FROM Filme"; 
+    $sql = "SELECT FK_PESSOA_nome_artistico, FK_PREMIO_nome, FK_PREMIO_ano
+            FROM ENominado
+            WHERE FK_PREMIO_tipo = 'melhor atriz' or FK_PREMIO_tipo = 'melhor ator'
+            "; 
     $result = $conn->query($sql);
-
-    $sql2 = "SELECT tipo, FK_EDICAO_ano, FK_EVENTO_nome FROM Premio"; 
-    $result2 = $conn->query($sql2);
-
-    
 
 } catch (PDOException $e) {
     die("Erro na conexão com o banco de dados: " . $e->getMessage());
@@ -54,21 +52,42 @@ try {
                     echo '<div class="alert alert-success" role="alert">' . $sucess . '</div>';
                 }
             ?>
-            <div class="row">
-                <h4>Cadastro de Nominações/Premiações de filmes</h4>
+            <div class="row mb-3">
+                <h4>Lista de atrizes/atores nominados a prêmios</h4>
             </div>
             <div class="row">
                 <div class="col"></div>
                 <div class="col-6">
+                    
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Nome Artístico</th>
+                        <th scope="col">Evento</th>
+                        <th scope="col">Ano</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            foreach ($result as $row) {
+                                echo "<tr>";
+                                echo "<td>{$row['FK_PESSOA_nome_artistico']}</td>";
+                                echo "<td>{$row['FK_PREMIO_nome']}</td>";
+                                echo "<td>{$row['FK_PREMIO_ano']}</td>";
+                                echo "</tr>";
+                            }
+                        ?>
+                            
+                    </tbody>
+                </table>
 
-                   
                 </div>
                 <div class="col mb-5"></div>
             </div>
         </div>
         
     </div>
-    <div style="margin-top: 180px;">
+    <div style="margin-top: 250px;">
     <?php 
         
         include '../partials/footer.php';

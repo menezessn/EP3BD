@@ -37,7 +37,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Atores/atrizes nominados</a>
+                    <a class="nav-link" href="listscreens/atrizes_atores_nominados.php">Atores/atrizes nominados</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Prêmios</a>
