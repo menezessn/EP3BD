@@ -6,13 +6,10 @@ try {
     $conn = $conn->conectar();
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT titulo_original, ano_producao FROM Filme"; 
-    $result = $conn->query($sql);
-
     $sql2 = "SELECT nome_artistico FROM Pessoa"; 
     $result2 = $conn->query($sql2);
 
-    $sql3 = "SELECT tipo, FK_EDICAO_ano, FK_EVENTO_nome FROM Premio"; 
+    $sql3 = "SELECT ano, FK_EVENTO_nome FROM Edicao"; 
     $result3 = $conn->query($sql3);
 
     
@@ -32,7 +29,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Nominações/Premiações de Pessoas</title>
+    <title>Cadastro de Juri</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -58,27 +55,14 @@ try {
                 }
             ?>
             <div class="row">
-                <h4>Cadastro de Nominações/Premiações de Pessoas</h4>
+                <h4>Cadastro de Juri</h4>
             </div>
             <div class="row">
                 <div class="col"></div>
                 <div class="col-6">
 
-                    <form method="post" action="../services/nominacoes_services.php">
+                    <form method="post" action="../services/juri_services.php">
 
-                        
-                        <div class="form-group mb-3">
-                            <label  for="filme">Filme</label>
-                            <select class="form-control" id="filme" name="filme">
-                                <option selected>Escolher...</option>
-                                <?php
-                                    // Iterar sobre os resultados e criar opções
-                                    foreach ($result as $row) {
-                                        echo "<option value='{$row['titulo_original']}-{$row['ano_producao']}'>{$row['titulo_original']}-{$row['ano_producao']}</option>";
-                                    }
-                                ?>
-                            </select>
-                        </div>
                         <div class="form-group mb-3">
                             <label  for="pessoa">Pessoa</label>
                             <select class="form-control" id="pessoa" name="pessoa">
@@ -92,27 +76,17 @@ try {
                             </select>
                         </div>
                         <div class="form-group mb-3">
-                            <label  for="premio">Premio</label>
-                            <select class="form-control" id="premio" name="premio">
+                            <label  for="edicao">Edição</label>
+                            <select class="form-control" id="edicao" name="edicao">
                                 <option selected>Escolher...</option>
                                 <?php
                                     // Iterar sobre os resultados e criar opções
                                     foreach ($result3 as $row) {
-                                        echo "<option value='{$row['tipo']}-{$row['FK_EDICAO_ano']}-{$row['FK_EVENTO_nome']}'>{$row['tipo']}-{$row['FK_EDICAO_ano']}-{$row['FK_EVENTO_nome']}</option>";
+                                        echo "<option value='{$row['FK_EVENTO_nome']}-{$row['ano']}'>{$row['FK_EVENTO_nome']}-{$row['ano']}</option>";
                                     }
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label  for="ganhou">Ganhou?</label>
-                            <select class="form-control" id="ganhou" name="ganhou">
-                                <option selected>Escolher...</option>
-                                <option value='Sim'>Sim</option>"
-                                <option value='Não'>Não</option>"
-                            </select>
-                        </div>
-                        
-                        
                         <button type="submit" class="btn btn-primary mb-5">Enviar</button>
 
                     </form>
@@ -122,7 +96,7 @@ try {
         </div>
         
     </div>
-    <div style="margin-top: 90px;">
+    <div style="margin-top: 260px;">
     <?php 
         
         include '../partials/footer.php';

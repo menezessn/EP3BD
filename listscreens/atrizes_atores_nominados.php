@@ -6,7 +6,7 @@ try {
     $conn = $conn->conectar();
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT FK_PESSOA_nome_artistico, FK_PREMIO_nome, FK_PREMIO_ano
+    $sql = "SELECT FK_PESSOA_nome_artistico, FK_PREMIO_nome, FK_PREMIO_ano, ganhou
             FROM ENominado
             WHERE FK_PREMIO_tipo = 'melhor atriz' or FK_PREMIO_tipo = 'melhor ator'
             "; 
@@ -65,6 +65,7 @@ try {
                         <th scope="col">Nome Artístico</th>
                         <th scope="col">Evento</th>
                         <th scope="col">Ano</th>
+                        <th scope="col">Ganhou?</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -74,6 +75,7 @@ try {
                                 echo "<td>{$row['FK_PESSOA_nome_artistico']}</td>";
                                 echo "<td>{$row['FK_PREMIO_nome']}</td>";
                                 echo "<td>{$row['FK_PREMIO_ano']}</td>";
+                                echo "<td>{$row['ganhou']}</td>";
                                 echo "</tr>";
                             }
                         ?>

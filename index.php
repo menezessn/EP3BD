@@ -34,6 +34,7 @@
                         <a class="dropdown-item " href="registerscreens/cadastro_premios.php">Prêmios</a>
                         <a class="dropdown-item " href="registerscreens/cadastro_nominacoes.php">Nominações de pessoas</a>
                         <a class="dropdown-item " href="registerscreens/cadastro_filme_nominado.php">Nominações de filmes</a>
+                        <a class="dropdown-item " href="registerscreens/cadastro_juri.php">Juri</a>
                     </div>
                 </li>
                 <li class="nav-item">
