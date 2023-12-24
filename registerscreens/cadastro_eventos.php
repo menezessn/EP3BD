@@ -27,7 +27,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Pessoas</title>
+    <title>Cadastro de Eventos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -59,11 +59,23 @@ try {
                 <div class="col"></div>
                 <div class="col-6">
 
-                    <form method="post" action="../services/pessoa_filme_services.php">
+                    <form method="post" action="../services/eventos_services.php">
 
                         <div class="form-group">
-                            <label for="titulo_original">Título original</label>
-                            <input type="text" class="form-control" id="titulo_original" name="titulo_original" required>
+                            <label for="nome">Nome</label>
+                            <input type="text" class="form-control" id="nome" name="nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ano_inicio">Ano início</label>
+                            <input type="number" class="form-control" id="ano_inicio" name="ano_inicio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nacionalidade">Nacionalidade</label>
+                            <input type="text" class="form-control" id="nacionalidade" name="nacionalidade" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo">Tipo</label>
+                            <input type="text" class="form-control" id="tipo" name="tipo" required>
                         </div>
                         
                         <button type="submit" class="btn btn-primary mb-5">Enviar</button>
@@ -75,7 +87,7 @@ try {
         </div>
         
     </div>
-    <div style="margin-top: 110px;">
+    <div style="margin-top: 90px;">
     <?php 
         
         include '../partials/footer.php';
