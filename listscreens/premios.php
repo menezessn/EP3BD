@@ -73,7 +73,7 @@ try {
                             </select>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary mb-5">Enviar</button>
+                        <button type="submit" class="btn btn-primary mb-5">Selecionar</button>
 
                     </form>
 
@@ -134,7 +134,7 @@ try {
                                     ?>
                                     <th scope="col">Ano da edição</th>
                                     <th scope="col">Tipo do Prêmio</th>
-                                    <th scope="col">Nome do Prêmio</th>
+                                    <th scope="col">Nome do Evento</th>
                                     <th scope="col">Ganhou?</th>
 
 
