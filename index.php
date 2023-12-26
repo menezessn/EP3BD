@@ -57,7 +57,7 @@
     <div class="container p-3">
         <div class="row">
             <div class="col">
-                <h4>Atores/Atrizes com mais prêmios</h4>
+                <h4>Atores/atrizes com mais prêmios</h4>
                 <canvas id="atores-mais-premiados"></canvas>
             </div>
         </div>
@@ -69,7 +69,7 @@
         </div>
         <div class="row mt-2">
             <div class="col">
-                <h4>Filmes com mais arrecadação</h4>
+                <h4>Filmes com maiores arrecadações</h4>
                 <canvas id="filmes-maior-arrecadacao"></canvas>
             </div>
         </div>
