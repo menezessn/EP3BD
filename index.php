@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TUSPELICULASFAVORITAS</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <?php 
+        include 'graphs/atores_com_mais_premios.php';
+    ?>
+    <?php 
+        include 'graphs/filmes_mais_premiados.php';
+    ?>
+    <?php 
+        include 'graphs/filmes_maior_arrecadacao.php';
+    ?>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -51,19 +58,19 @@
         <div class="row">
             <div class="col">
                 <h4>Atores/Atrizes com mais prêmios</h4>
-                <img src="images/exemplo.png" alt="">
+                <canvas id="atores-mais-premiados"></canvas>
             </div>
         </div>
         <div class="row mt-2">
             <div class="col">
                 <h4>Filmes mais premiados</h4>
-                <img src="images/exemplo.png" alt="">
+                <canvas id="filmes-mais-premiados"></canvas>
             </div>
         </div>
         <div class="row mt-2">
             <div class="col">
                 <h4>Filmes com mais arrecadação</h4>
-                <img src="images/exemplo.png" alt="">
+                <canvas id="filmes-maior-arrecadacao"></canvas>
             </div>
         </div>
     </div>
@@ -74,6 +81,15 @@
 
     ?>
     
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="graphs/atores_com_mais_premios.js"></script>
+    <script src="graphs/filmes_mais_premiados.js"></script>
+    <script src="graphs/filmes_maior_arrecadacao.js"></script>
+
     
+    
+
 </body>
 </html>
