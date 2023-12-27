@@ -32,6 +32,7 @@ try {
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="../dinamicfunctions/pessoa_em_filme.js"></script>
 </head>
 <body>
 
@@ -63,7 +64,7 @@ try {
 
                     <div class="form-group mb-3">
                         <label  for="nome_artistico">Pessoa</label>
-                        <select class="form-control" id="nome_artistico" name="nome_artistico">
+                        <select class="form-control" id="nome_artistico" name="nome_artistico" onchange="teste()">
                             <option selected>Escolher...</option>
                             <?php
                                 // Iterar sobre os resultados e criar opções
@@ -90,17 +91,19 @@ try {
 
                     Funcão <br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="EAtor" value="EAtor" name="funcoes[]">
+                            <input id="ator" class="form-check-input" type="checkbox" id="EAtor" value="EAtor" name="funcoes[]" disabled>
                             <label class="form-check-label" for="EAtor">Ator</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="EDiretor" value="EDiretor" name="funcoes[]">
+                            <input id="diretor" class="form-check-input" type="checkbox" id="EDiretor" value="EDiretor" name="funcoes[]" disabled>
                             <label class="form-check-label" for="EDiretor">Diretor</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="EOutrasFuncoes" value="EOutrasFuncoes" name="funcoes[]">
-                            <label class="form-check-label" for="EOutrasFuncoes">Outro</label>
+                            <input id="outro" class="form-check-input" type="checkbox" id="EOutrasFuncoes" value="EOutrasFuncoes" name="funcoes[]" onchange="mostrarFuncao()" disabled>
+                            <label class="form-check-label" for="EOutrasFuncoes" >Outro</label>
                         </div>
+
+                        <small id="checkbox-texto" class="form-text text-muted">Selecione a pessoa primeiro</small>
 
                         <div class="form-group">
                             <input type="hidden" class="form-control" id="hidden" name="hidden">
@@ -114,6 +117,12 @@ try {
                                 <option value='nao'>Não</option>"
                             </select>
                         </div>
+
+                        <div id="outra-funcao" style="display:none;" class="form-group">
+                            <label for="outra-funcao">Outra função</label>
+                            <input type="text" class="form-control" id="outra-funcao-input" name="outra-funcao">
+                        </div>
+
                         <button type="submit" class="btn btn-primary mb-5">Enviar</button>
 
                     </form>
@@ -130,5 +139,9 @@ try {
 
     ?>
     </div>
+
+    
+
+    
 </body>
 </html>
