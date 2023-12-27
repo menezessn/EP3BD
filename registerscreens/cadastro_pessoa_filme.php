@@ -6,8 +6,8 @@ try {
     $conn = $conn->conectar();
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT nome_artistico FROM Pessoa"; 
-    $result = $conn->query($sql);
+    // $sql = "SELECT nome_artistico FROM Pessoa"; 
+    // $result = $conn->query($sql);
 
     $sql2 = "SELECT titulo_original, ano_producao FROM Filme";
     $result2 = $conn->query($sql2);
@@ -55,38 +55,32 @@ try {
                 }
             ?>
             <div class="row">
-                <h4 c>Cadastro de Pessoas em Filmes </h4>
+                <h4>Cadastro de Pessoas em Filmes </h4>
             </div>
             <div class="row">
                 <div class="col"></div>
                 <div class="col-6">
 
                     <form method="post" action="../services/pessoa_filme_services.php">
-
                     <div class="form-group mb-3">
-                        <label  for="nome_artistico">Pessoa</label>
-                        <select id="select-pessoa" class="form-control" id="nome_artistico" name="nome_artistico" onchange="procurarFuncoes()" >
+                        <label  for="pessoa">Filme</label>
+                        <select id="select-filme" class="form-control" id="filme" name="filme" onchange="verificarDocumentario()">
                             <option selected>Escolher...</option>
                             <?php
                                 // Iterar sobre os resultados e criar opções
-                                foreach ($result as $row) {
-                                    echo "<option value='{$row['nome_artistico']}'>{$row['nome_artistico']}</option>";
+                                foreach ($result2 as $row) {
+                                    echo "<option value='{$row['titulo_original']}|{$row['ano_producao']}'>{$row['titulo_original']} - {$row['ano_producao']}</option>";
+                                    
                                 }
                             ?>
                         </select>
                     </div>
 
                     <div class="form-group mb-3">
-                        <label  for="pessoa">Filme</label>
-                        <select class="form-control" id="filme" name="filme">
-                            <option selected>Escolher...</option>
-                            <?php
-                                // Iterar sobre os resultados e criar opções
-                                foreach ($result2 as $row) {
-                                    echo "<option value='{$row['titulo_original']}|{$row['ano_producao']}'>{$row['titulo_original']}</option>";
-                                    
-                                }
-                            ?>
+                        <label  for="nome_artistico">Pessoa</label>
+                        <select id="select-pessoa" class="form-control" id="nome_artistico" name="nome_artistico" onchange="procurarFuncoes()" disabled>
+                            <option selected>Selecione o filme primeiro...</option>
+                            
                         </select>
                     </div>
 

@@ -33,6 +33,7 @@ function procurarFuncoes(){
 function mostrarFuncao(){
     var outro = document.getElementById("outro");
     var outraFuncao = document.getElementById("outra-funcao");
+    
 
     if (outro.checked){
         outraFuncao.style.display = "block";    
@@ -41,6 +42,30 @@ function mostrarFuncao(){
         outraFuncao.style.display = "none";
         outraFuncao.removeAttribute("required");
     }
+}
+
+function verificarDocumentario(){
+    var selectFilme = document.getElementById("select-filme");
+    var selectPessoa = document.getElementById("select-pessoa");
+    var teste = document.getElementById("teste");
+
+
+
+    selectPessoa.innerHTML = "<option value=''>Carregando...</option>";
+
+    var opcaoSelecionada = selectFilme.value;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Atualiza o conteúdo do segundo select com os dados recebidos
+            selectPessoa.innerHTML = this.responseText;
+            // Habilita o segundo select
+            selectPessoa.disabled = false;
+        }
+    };
+    xhttp.open("GET", "../dinamicfunctions/verificar_documentario.php?opcao=" + opcaoSelecionada, true);
+    xhttp.send();
+
 }
 
 
