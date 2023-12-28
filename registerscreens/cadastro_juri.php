@@ -56,7 +56,6 @@ try {
             ?>
             <div class="row">
                 <h4>Cadastro de Juri</h4>
-                <h2 id="teste-h2"></h2>
             </div>
             <div class="row">
                 <div class="col"></div>

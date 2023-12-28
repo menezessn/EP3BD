@@ -2,7 +2,7 @@ function carregarJuri(){
     console.log("teste");
     var select_pessoa = document.getElementById("select-pessoa");  
     var select_edicao = document.getElementById("select-edicao");
-    var teste = document.getElementById("teste-h2");
+
 
 
 
@@ -17,7 +17,6 @@ function carregarJuri(){
             //
             select_pessoa.innerHTML = data;
             select_pessoa.disabled = false;
-            teste.innerHTML = data;
         },
         error: function(error) {
             console.error('Erro na solicitação AJAX:', error);

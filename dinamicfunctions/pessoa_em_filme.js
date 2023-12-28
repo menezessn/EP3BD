@@ -46,7 +46,7 @@ function mostrarFuncao(){
 function verificarDocumentario(){
     var selectFilme = document.getElementById("select-filme");
     var selectPessoa = document.getElementById("select-pessoa");
-    var teste = document.getElementById("teste");
+    
 
 
 
