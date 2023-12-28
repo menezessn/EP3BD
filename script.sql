@@ -301,13 +301,13 @@ CREATE TABLE IF NOT EXISTS `db_filmes`.`FilmeNominado` (
   CONSTRAINT `FK_PREMIO_filme_nominado`
     FOREIGN KEY (`FK_PREMIO_tipo` , `FK_PREMIO_ano` , `FK_PREMIO_nome`)
     REFERENCES `db_filmes`.`Premio` (`tipo` , `FK_EDICAO_ano` , `FK_EVENTO_nome`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `FK_FILME_filme_nominado`
     FOREIGN KEY (`FK_FILME_titulo_original` , `FK_FILME_ano_producao`)
     REFERENCES `db_filmes`.`Filme` (`titulo_original` , `ano_producao`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
+    ON DELETE CASCADE
+    ON UPDATE CASCADE);
 
 
 DELIMITER $
