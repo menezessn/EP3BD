@@ -5,7 +5,7 @@ var data = {
 labels: labels,
 datasets: [{
     axis: 'y',
-    label: 'Maior arrecadação',
+    label: 'Arrecadação',
     data: data_filmes_maior_arrecadacao,
     fill: false,
     backgroundColor: [

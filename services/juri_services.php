@@ -10,7 +10,7 @@
         }
         $conexao = new Conexao();
         $conexao = $conexao->conectar();
-        $query = 'INSERT INTO Ejuri 
+        $query = 'INSERT INTO EJuri 
                 VALUES (:FK_PESSOA_nome_artistico, :FK_EDICAO_ano, :FK_EDICAO_nome )';
         $stmt = $conexao->prepare($query);
 

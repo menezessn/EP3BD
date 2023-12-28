@@ -5,7 +5,7 @@ var data = {
 labels: labels,
 datasets: [{
     axis: 'y',
-    label: 'Prêmios de melhor ator/atriz',
+    label: 'Número de premios',
     data: data_bd,
     fill: false,
     backgroundColor: [

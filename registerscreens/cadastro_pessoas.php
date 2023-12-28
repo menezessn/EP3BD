@@ -81,15 +81,15 @@
 
                         Funcão <br>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="ator" value="ator" name="funcoes[]">
+                            <input class="form-check-input" type="checkbox" id="ator" value="Ator" name="funcoes[]">
                             <label class="form-check-label" for="ator">Ator</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="diretor" value="diretor" name="funcoes[]">
+                            <input class="form-check-input" type="checkbox" id="diretor" value="Diretor" name="funcoes[]">
                             <label class="form-check-label" for="diretor">Diretor</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="outro" value="outro" name="funcoes[]">
+                            <input class="form-check-input" type="checkbox" id="outro" value="OutrasFuncoes" name="funcoes[]">
                             <label class="form-check-label" for="outro">Outro</label>
                         </div>
 
