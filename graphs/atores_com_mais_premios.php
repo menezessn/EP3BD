@@ -9,7 +9,7 @@
                 FK_PESSOA_nome_artistico,
                 COUNT(*) AS quantidade_ocorrencias	
             FROM
-                enominado
+                ENominado
             WHERE
                 FK_PREMIO_tipo = 'melhor ator' or FK_PREMIO_tipo = 'melhor atriz' 
             GROUP BY
