@@ -1,5 +1,4 @@
 function procurarFuncoes(){
-    console.log("procurarFuncao");
     var pessoa = document.getElementById("select-pessoa");  
     var ator = document.getElementById("ator");
     var diretor = document.getElementById("diretor");

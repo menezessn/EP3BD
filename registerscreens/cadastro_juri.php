@@ -6,8 +6,6 @@ try {
     $conn = $conn->conectar();
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql2 = "SELECT nome_artistico FROM Pessoa"; 
-    $result2 = $conn->query($sql2);
 
     $sql3 = "SELECT ano, FK_EVENTO_nome FROM Edicao"; 
     $result3 = $conn->query($sql3);
@@ -34,6 +32,8 @@ try {
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../dinamicfunctions/carregar_juri.js"></script>
 </head>
 <body>
 
@@ -56,6 +56,7 @@ try {
             ?>
             <div class="row">
                 <h4>Cadastro de Juri</h4>
+                <h2 id="teste-h2"></h2>
             </div>
             <div class="row">
                 <div class="col"></div>
@@ -63,21 +64,10 @@ try {
 
                     <form method="post" action="../services/juri_services.php">
 
-                        <div class="form-group mb-3">
-                            <label  for="pessoa">Pessoa</label>
-                            <select class="form-control" id="pessoa" name="pessoa">
-                                <option selected>Escolher...</option>
-                                <?php
-                                    // Iterar sobre os resultados e criar opções
-                                    foreach ($result2 as $row) {
-                                        echo "<option value='{$row['nome_artistico']}'>{$row['nome_artistico']}</option>";
-                                    }
-                                ?>
-                            </select>
-                        </div>
+                        
                         <div class="form-group mb-3">
                             <label  for="edicao">Edição</label>
-                            <select class="form-control" id="edicao" name="edicao">
+                            <select id="select-edicao" class="form-control" id="edicao" name="edicao" onchange="carregarJuri()">
                                 <option selected>Escolher...</option>
                                 <?php
                                     // Iterar sobre os resultados e criar opções
@@ -85,6 +75,13 @@ try {
                                         echo "<option value='{$row['FK_EVENTO_nome']}-{$row['ano']}'>{$row['FK_EVENTO_nome']}-{$row['ano']}</option>";
                                     }
                                 ?>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label  for="pessoa">Pessoa</label>
+                            <select id="select-pessoa" class="form-control" id="pessoa" name="pessoa" disabled>
+                                <option value="">Selecione a edição primeiro...</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary mb-5">Enviar</button>
