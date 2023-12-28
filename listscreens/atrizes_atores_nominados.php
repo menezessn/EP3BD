@@ -89,7 +89,7 @@ try {
         </div>
         
     </div>
-    <div style="margin-top: 250px;">
+    <div style="margin-top: 350px;">
     <?php 
         
         include '../partials/footer.php';
