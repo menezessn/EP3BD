@@ -11,7 +11,13 @@
             FROM
                 ENominado
             WHERE
-                FK_PREMIO_tipo = 'melhor ator' or FK_PREMIO_tipo = 'melhor atriz' 
+                ganhou='Sim' AND
+                FK_PESSOA_nome_artistico IN (
+                    SELECT
+                        FK_PESSOA_nome_artistico
+                    FROM
+                        Ator
+                )
             GROUP BY
                 FK_PESSOA_nome_artistico
             ORDER BY quantidade_ocorrencias DESC

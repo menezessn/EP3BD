@@ -7,8 +7,15 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $sql = "SELECT FK_PESSOA_nome_artistico, FK_PREMIO_nome, FK_PREMIO_ano, ganhou
-            FROM ENominado
-            WHERE FK_PREMIO_tipo = 'melhor atriz' or FK_PREMIO_tipo = 'melhor ator'
+            FROM
+                ENominado
+            WHERE
+                FK_PESSOA_nome_artistico IN (
+                    SELECT
+                        FK_PESSOA_nome_artistico
+                    FROM
+                        Ator
+                )
             "; 
     $result = $conn->query($sql);
 
