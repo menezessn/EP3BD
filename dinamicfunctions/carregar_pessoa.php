@@ -13,7 +13,7 @@
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $sql = "SELECT FK_ATOR_nome_artistico as nome_artistico
-            FROM Eator
+            FROM EAtor
             WHERE FK_OUTROS_titulo_original = :titulo_original AND FK_OUTROS_ano_producao = :ano_producao
             UNION
             SELECT FK_DIRETOR_nome_artistico as nome_artistico
